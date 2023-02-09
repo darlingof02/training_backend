@@ -33,8 +33,8 @@ export class EmployeeService {
     )
   }
 
-  public removeAEmployee(employeeID: number): Observable<any> {
-    return this.http.delete(this.API_URL + "/employee", this.authService.getJWTHeader())
+  public removeAEmployee(employeeID: string): Observable<any> {
+    return this.http.delete(this.API_URL + "/employee/" + employeeID, this.authService.getJWTHeader())
     .pipe(
       map((res) => {
         return res;
@@ -42,8 +42,8 @@ export class EmployeeService {
     );
   }
 
-  public updateAnEmployee(employee: Employee): Observable<any> {
-    return this.http.put(this.API_URL + "/employee", employee, this.authService.getJWTHeader())
+  public updateAnEmployee(employee: Employee, employeeID: string): Observable<any> {
+    return this.http.put(this.API_URL + "/employee/" + employeeID, employee, this.authService.getJWTHeader())
     .pipe(
       map((res) => {
         return res;

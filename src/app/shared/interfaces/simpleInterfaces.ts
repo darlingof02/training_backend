@@ -19,3 +19,19 @@ export interface Employee {
     active: Boolean;
     skillLevel: SkillLevel;
 }
+
+
+export interface EmployeeForm {
+    employeeID: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    dob: {
+        year: number;
+        month: number;
+        day: number;
+    }
+    age: number;
+    active: Boolean;
+    skillLevelID: string;
+}

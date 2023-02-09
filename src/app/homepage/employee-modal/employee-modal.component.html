@@ -1,1 +1,60 @@
-<p>employee-modal works!</p>
+<!-- <ng-template #content let-modal> -->
+    <form  #loginForm="ngForm" id="ngForm">
+    <div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title" *ngIf="!tempEmployee">New Employee</h4>
+        <h4 class="modal-title" id="modal-basic-title" *ngIf="tempEmployee">Update Employee</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+        
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" ngModel>
+    
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="active">Active</label>
+                <select type="text" class="form-control" id="active" name="active" ngModel>
+                    <option *ngFor="let status of employeeStatus" [value]="status">{{status}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" name="age" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="skillLevelID">Skill Level</label>
+                <select type="date" class="form-control" id="skillLevelID" name="skillLevelID" ngModel>
+                    <option *ngFor="let skill of skills" [value]="skill.skillLevelID">{{skill.skillName}} : {{skill.skillDescription}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="DOB">DOB</label>
+                <div class="input-group">
+                <input id="dob" placeholder="mm-dd-yyyy" name="dob" ngbDatepicker #dp="ngbDatepicker" ngModel/>
+                <button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button>
+            </div>
+            </div>
+            
+        
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark"  (click)="updateEmployee(loginForm.value)" *ngIf="tempEmployee">Save</button>
+        <button type="button" class="btn btn-outline-primary" (click)="addNewEmployee(loginForm.value)" *ngIf="!tempEmployee" form="ngForm">Add</button>
+	</div>
+</form>
+<!-- </ng-template> -->
+
+
+
+<hr />
+
+<pre>{{ closeResult }}</pre>

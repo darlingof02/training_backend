@@ -1,16 +1,18 @@
-<div class="container">
-  <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">ng2demo</a>
+<div class="container-fluid">
+  <nav  class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">ng2demo</a>
+      </div>
+      <ul class="nav navbar-nav" *ngIf="true async">
+        <li>
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        
+      </ul>
     </div>
-    <ul class="nav navbar-nav" *ngIf="true async">
-      <li>
-        <a routerLink="/home" routerLinkActive="active">Home</a>
-      </li>
-      
-    </ul>
   </nav>
-  <div class="row">
+  <div class="p-4">
     <router-outlet></router-outlet>
   </div>
 </div>
