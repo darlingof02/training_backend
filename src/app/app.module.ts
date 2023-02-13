@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { EmployeeModalComponent } from './homepage/employee-modal/employee-modal.component';
 import { SkillEditComponent } from './skill-edit/skill-edit.component';
+import { SkillComponent } from './skill-edit/skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SkillEditComponent } from './skill-edit/skill-edit.component';
     LoginComponent,
     HomepageComponent,
     EmployeeModalComponent,
-    SkillEditComponent
+    SkillEditComponent,
+    SkillComponent
   ],
   imports: [
     BrowserModule,

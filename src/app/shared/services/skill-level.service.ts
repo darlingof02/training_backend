@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { map, Observable } from 'rxjs';
+import { SkillLevel } from '../interfaces/simpleInterfaces';
 import { AppConfig } from './app.config';
 import { AuthService } from './auth.service';
 
@@ -21,4 +23,15 @@ export class SkillLevelService {
       })
     )
   }
+
+  public addNewSkillLevel(skillLevel: SkillLevel): Observable<any> {
+    return this.http.post(this.API_URL + "/skillLevel", skillLevel, this.authService.getJWTHeader())
+    .pipe(
+      map((res) => {
+        return res;
+      })
+    )
+  }
+
+  
 }

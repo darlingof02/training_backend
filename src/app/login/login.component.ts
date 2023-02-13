@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
     this.authService.login(user)
     .subscribe((next) => {
       this.router.navigate(['/home']);
+    },
+    (error) => {
+      alert("No Record For This User");
     }
     );
   }
