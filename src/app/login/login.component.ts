@@ -18,15 +18,6 @@ export class LoginComponent implements OnInit {
   }
 
   public login(user:User) {
-    // let  user = {
-    //   username: this.username,
-    //   password: this.password
-    // };
-
-    console.log(user)
-    // console.log("login function")
-    // let user: User;
-    // user.password = 
     this.authService.login(user)
     .subscribe((next) => {
       this.router.navigate(['/home']);
@@ -40,7 +31,7 @@ export class LoginComponent implements OnInit {
   
 
   ngOnInit(): void {
-    // console.log("login page")
+    
   }
 
 }

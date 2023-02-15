@@ -8,13 +8,10 @@ import { SkillLevelService } from 'src/app/shared/services/skill-level.service';
   templateUrl: './skill.component.html',
   styleUrls: ['./skill.component.css']
 })
-export class SkillComponent implements OnInit {
+export class SkillComponent {
 
   constructor(private modalService: NgbModal, private skillLevelService: SkillLevelService, public activeModal: NgbActiveModal) { }
 
-  ngOnInit(): void {
-
-  }
 
   addNewSkill(skillLevel: SkillLevel): void {
     this.skillLevelService.addNewSkillLevel(skillLevel)
