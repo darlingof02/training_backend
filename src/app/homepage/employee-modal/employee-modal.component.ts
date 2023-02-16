@@ -33,12 +33,10 @@ export class EmployeeModalComponent implements OnInit{
         this.skills = res;
       }
     )
-    console.log(this.tempEmployee);
     
     setTimeout(() => {
       if (this.tempEmployee)
         this.loginForm.setValue(this.convertEmployee(this.tempEmployee));
-      console.log(this.loginForm);
     })
   }
 

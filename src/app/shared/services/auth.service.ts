@@ -20,7 +20,6 @@ export class AuthService {
     
     return this.http.post(this.API_URL + "/authenticate", user, {observe: 'response'})
     .pipe(
-
       map((res) => {
       if (res.body != null) {
         var obj: {[token: string]: any} = res.body;
@@ -36,6 +35,13 @@ export class AuthService {
       })
     );
   }
+
+  authLogout(): void {
+    this.removeJWTToken();
+    this.router.navigate(['/login']);
+    this.loggedIn.next(false);
+  }
+
 
   getJWTToken(): string {
     return localStorage.getItem("JWT_TOKEN")??"";

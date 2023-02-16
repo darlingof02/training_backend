@@ -11,6 +11,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { EmployeeModalComponent } from './homepage/employee-modal/employee-modal.component';
 import { SkillEditComponent } from './skill-edit/skill-edit.component';
 import { SkillComponent } from './skill-edit/skill/skill.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SkillComponent } from './skill-edit/skill/skill.component';
     HomepageComponent,
     EmployeeModalComponent,
     SkillEditComponent,
-    SkillComponent
+    SkillComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
